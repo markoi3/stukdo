@@ -1,11 +1,11 @@
 
       <h5>
-      <div class="panel panel-primary">
+      <div class="panel panel-info">
     <div class="panel-heading text-left">
         <%= link_to edit_task_path(task) do %>
         created <%= time_ago_in_words(task.created_at) %> ago
         <% end %>
-        
+        <%= link_to "x", task_path(task), method: :delete, data: {confirm: "Are you sure you want to delete this task:"}, class: "pull-right" %>
         </div>
     <div class="panel-body text-left"><%= task.content %></div>
     
